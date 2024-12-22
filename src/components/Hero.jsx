@@ -1,20 +1,32 @@
-import { Button, Container, Heading, Text } from 'shadcn-ui';
+import { Text, Button } from "../utils/index"
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-cover bg-center" style={{ backgroundImage: 'url("/path-to-your-image.jpg")' }}>
-      <div className="absolute inset-0 bg-black opacity-50" />
-      <Container className="relative text-center text-white py-16">
-        <Heading as="h1" size="xl" className="mb-4">
+    <section className="relative h-screen">
+      <div className="absolute inset-0 overflow-hidden">
+        <iframe
+          className="w-full h-full absolute inset-0 object-cover"
+          src="https://www.youtube.com/embed/Nx0N-DrPf7M?frameBorder=0&autoplay=1&mute=1&loop=1&playlist=Nx0N-DrPf7M&controls=0&showinfo=0&modestbranding=1&rel=0&disablekb=1&showinfo=0"          
+          title="YouTube video background"
+          allow="autoplay; fullscreen; encrypted-media"
+        ></iframe>
+      </div>
+
+      {/* Blur Overlay */}
+      <div className="absolute inset-0 bg-green-950 bg-opacity-50 backdrop-blur-sm"></div>
+
+      {/* Content */}
+      <div className="relative text-3xl container mx-auto h-full flex flex-col justify-center items-center text-center text-white px-4">
+        <p className="text-7xl font-bold text-white">
           Welcome to Curanet
-        </Heading>
-        <Text size="lg" className="mb-8">
+        </p>
+        <p className="text-lg my-6">
           Your one-stop platform for all your healthcare needs, connecting patients and professionals.
-        </Text>
-        <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black">
+        </p>
+        <Button variant="outlined" color="primary" size="lg">
           Get Started
         </Button>
-      </Container>
+      </div>
     </section>
   );
 };

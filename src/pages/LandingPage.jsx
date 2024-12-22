@@ -1,11 +1,12 @@
-import {About, Footer, Hero} from 'utils/index'
+import {HeroSection, AboutSection, TeamsSection, Footer} from '../utils/index'
 
 
 const LandingPage = () =>{
   return(
     <>
-     <Hero />
-    <About />
+    <HeroSection />
+    <AboutSection />
+    <TeamsSection />
     <Footer />
     </>
   )

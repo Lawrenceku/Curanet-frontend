@@ -1,21 +1,27 @@
-import { Container, Text, Link } from 'shadcn-ui';
+import { Text } from "../utils/index";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-8">
-      <Container className="text-center">
-        <Text size="sm">
+      <div className="container mx-auto text-center">
+        <p size="sm" className="text-gray-400">
           &copy; {new Date().getFullYear()} Curanet. All rights reserved.
-        </Text>
+        </p>
         <div className="mt-4">
-          <Link href="/privacy-policy" className="text-gray-400 hover:text-white mx-2">
+          <p
+            href="/privacy-policy"
+            className="text-gray-400 hover:text-white mx-2 underline"
+          >
             Privacy Policy
-          </Link>
-          <Link href="/terms-of-service" className="text-gray-400 hover:text-white mx-2">
+          </p>
+          <p
+            href="/terms-of-service"
+            className="text-gray-400 hover:text-white mx-2 underline"
+          >
             Terms of Service
-          </Link>
+          </p>
         </div>
-      </Container>
+      </div>
     </footer>
   );
 };
