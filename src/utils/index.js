@@ -4,6 +4,12 @@ import AboutSection from "../components/About";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
 import Navbar from "../components/NavBar";
+import useFetch from "../hooks/useFetch";
+import LandingPage from "../pages/LandingPage";
+import SignUp from "../pages/auth/SignUp";
+import SignIn from "../pages/auth/SignIn";
+
+
 
 export {
     HeroSection,
@@ -11,5 +17,9 @@ export {
     TeamsSection,
     Footer,
     Button, 
-    Navbar
+    Navbar,
+    useFetch,
+    LandingPage,
+    SignUp,
+    SignIn
 }

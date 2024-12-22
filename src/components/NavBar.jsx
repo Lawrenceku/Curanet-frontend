@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import { Navigation } from "../apis/context/navigateContext";
 
 const Navbar = () => {
   return (
@@ -32,7 +33,7 @@ const Navbar = () => {
           >
             Team
           </a>
-          <Button variant="filled" color="primary" size="md">
+          <Button onClick={()=>{Navigation('/signup')}} variant="filled" color="primary" size="md">
             Sign Up
           </Button>
         </div>
