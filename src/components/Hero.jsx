@@ -20,10 +20,10 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative text-3xl container mx-auto h-full flex flex-col justify-center items-center text-center text-white px-4">
-        <p className="text-7xl font-bold text-white">
+        <p className="text-5xl md:text-6xl font-bold text-white">
           Welcome to Curanet
         </p>
-        <p className="text-lg my-6">
+        <p className="text-base md:text-md my-6">
         Simplifying pharmacy workflows and provide healthcare professionals with tools to enhance patient safety and optimize daily operations.</p>
         <Button variant="outlined" color="primary" size="lg">
           Get Started
