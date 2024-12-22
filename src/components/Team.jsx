@@ -9,8 +9,8 @@ const teams = [
 
 const TeamsSection = () => {
   return (
-    <section className="teams-section">
-      <h2 className="text-center text-2xl font-bold mb-8">Meet the Team</h2>
+    <section id="team" className="teams-section my-20">
+      <h2 className="text-center text-2xl font-bold mb-8 text-green-800">Meet the Team</h2>
       <div className="team-container flex flex-wrap justify-center gap-4">
         {teams.map((member) => (
           <div

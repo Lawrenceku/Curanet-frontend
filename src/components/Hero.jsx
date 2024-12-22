@@ -1,15 +1,18 @@
-import { Text, Button } from "../utils/index"
+import { Navbar, Button } from "../utils/index"
 
 const HeroSection = () => {
   return (
-    <section className="relative h-screen">
+    <section id="home" className="relative h-screen">
+      <Navbar />
       <div className="absolute inset-0 overflow-hidden">
-        <iframe
+          <video
           className="w-full h-full absolute inset-0 object-cover"
-          src="https://www.youtube.com/embed/Nx0N-DrPf7M?frameBorder=0&autoplay=1&mute=1&loop=1&playlist=Nx0N-DrPf7M&controls=0&showinfo=0&modestbranding=1&rel=0&disablekb=1&showinfo=0"          
-          title="YouTube video background"
-          allow="autoplay; fullscreen; encrypted-media"
-        ></iframe>
+          src="https://raw.githubusercontent.com/Lawrenceku/assets/main/videos/InShot_20241222_183055695.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        ></video>
       </div>
 
       {/* Blur Overlay */}
@@ -21,8 +24,7 @@ const HeroSection = () => {
           Welcome to Curanet
         </p>
         <p className="text-lg my-6">
-          Your one-stop platform for all your healthcare needs, connecting patients and professionals.
-        </p>
+        Simplifying pharmacy workflows and provide healthcare professionals with tools to enhance patient safety and optimize daily operations.</p>
         <Button variant="outlined" color="primary" size="lg">
           Get Started
         </Button>

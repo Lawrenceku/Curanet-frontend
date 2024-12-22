@@ -1,16 +1,12 @@
-import { Text } from "../utils/index";
-// import { cn } from "@/lib/utils"; // Helper for conditional classes if using shadcn-ui's className merging utility
-
 const AboutSection = () => {
   return (
-    <section className="py-16 bg-gray-100">
-      <div className="container mx-auto text-center">
-        <p as="h2" size="2xl" className="mb-4">
+    <section id="about" className="py-16 pb-80 bg-gray-100">
+      <div className="container mx-auto ">
+        <p className="mb-4 text-center font-bold text-2xl text-green-800">
           About Curanet
         </p>
-        <p size="lg" className="mx-auto max-w-3xl">
-          Curanet is a cutting-edge platform designed to bridge the gap between healthcare providers and patients, ensuring better access to services, faster responses, and more personalized care. Our goal is to make healthcare more efficient, accessible, and user-friendly for everyone.
-        </p>
+        <p className="mx-auto px-8 md:px-0 max-w-3xl">
+        PharmaConnect is an innovative web application designed to streamline pharmacy operations, enhance prescription management, and improve access to accurate drug interaction data. Built with simplicity and efficiency in mind, PharmaConnect empowers pharmacies and healthcare providers to deliver safer and more efficient services.        </p>
       </div>
     </section>
   );

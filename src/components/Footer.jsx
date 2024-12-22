@@ -1,5 +1,3 @@
-import { Text } from "../utils/index";
-
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-8">
