@@ -1,76 +1,70 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Input from "../components/Input";
 import Button from "../components/Button";
 
 const LoginPage = () => {
-    const [formData, setFormData] = useState({ username: "", password: "" });
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     const [shake, setShake] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState("");
+    const navigate = useNavigate();
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
-    };
-
-    const handleSubmit = (e) => {
+    const handleLogin = (e) => {
         e.preventDefault();
 
-        const form = e.target;
-        if (!form.reportValidity()) {
+        if (username === "admin" && password === "adminPassword") {
+            navigate("/admin-dashboard");
+        } else {
+            setError("Incorrect username or password");
             setShake(true);
             setTimeout(() => setShake(false), 300);
-        } else {
-            setIsLoading(true);
-            setTimeout(() => {
-                console.log("Logging in with", formData);
-                setIsLoading(false);
-            }, 2000);
-
         }
     };
 
     return (
-        <div
-            className="h-screen flex items-center justify-center bg-cover bg-center "
-            style={{ backgroundImage: "url('/Background_Image.jpg') "}}
-        >
-            <div className="absolute inset-0 bg-black opacity-5"></div>
+        <section className="relative h-screen">
+            <div className="absolute inset-0 bg-cover bg-center ">
+                <img src="/Background_Image.jpg" alt="IT health practitioner background" className="w-full object-cover" />
+            </div>
+            <div className="absolute inset-0 bg-black opacity-5 flex justify-center items-center">
+                <div className="relative bg-white p-8 rounded-lg shadow-lg w-98">
+                    <h2 className="text-2xl font-bold text-center mb-4 ">Login</h2>
+                    {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
-            <div className="relative bg-white p-8 rounded-lg shadow-lg w-full max-w-sm z-10">
-                <h1 className="text-2xl font-bold text-center mb-4 ">Welcome to CuraNet</h1>
-                <p className="text-center mb-4 text-lg text-gray-700">
-                    <i>Your all-round health tech-solutions</i>
-                </p>
-                <form onSubmit={handleSubmit} className="space-y-1">
-                    <Input
-                        type="text"
-                        name="username"
-                        value={formData.username}
-                        onChange={handleInputChange}
-                        placeholder="Enter your username"
-                        className={`p-2 border rounded-md w-full ${shake ? "shake" : ""}`}
-                        required
-                    />
-                    <Input
+                    <form onSubmit={handleLogin} className={shake ? "shake" : ""}>
+                        <Input
+                            type="text"
+                            name="username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            placeholder="Enter username"
+                            className="w-full p-3 mb-4 border border-gray-300 rounded"
+                            required
+                        />
+                        <Input
                         type="password"
                         name="password"
-                        value={formData.password}
-                        onChange={handleInputChange}
-                        placeholder="Enter your password"
-                        className={`p-2 border rounded-md w-full ${shake ? "shake" : ""}`}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Enter password"
+                        className="p-3 border rounded-md w-full border-gray-300"
                         required
-                    />
-                    <Button
-                        type="submit"
-                        className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-800"
-                        disabled={!formData.username || !formData.password}
-                    >
-                        {isLoading ? "Logging in..." : "Login"}
-
-                    </Button>
-                </form>
+                        />
+                        <Button
+                            type="submit"
+                            variant="filled"
+                            color="primary"
+                            size="lg"
+                            className="w-full"
+                            required
+                        >
+                            Login
+                        </Button>
+                    </form>
+                </div>
             </div>
-        </div>
+        </section>
     );
 };
 
