@@ -6,7 +6,6 @@ import Button from "../components/Button";
 import Navbar from "../components/NavBar";
 import useFetch from "../hooks/useFetch";
 import LandingPage from "../pages/LandingPage";
-import SignUp from "../pages/auth/SignUp";
 import SignIn from "../pages/auth/SignIn";
 
 
@@ -16,10 +15,9 @@ export {
     AboutSection,
     TeamsSection,
     Footer,
-    Button, 
+    Button,
     Navbar,
     useFetch,
     LandingPage,
-    SignUp,
     SignIn
 }

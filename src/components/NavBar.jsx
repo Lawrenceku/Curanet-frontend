@@ -33,8 +33,8 @@ const Navbar = () => {
           >
             Team
           </a>
-          <Button onClick={()=>{Navigation('/signup')}} variant="filled" color="primary" size="md">
-            Sign Up
+          <Button onClick={()=>{Navigation('/signin')}} variant="filled" color="primary" size="md">
+            Sign In
           </Button>
         </div>
       </div>
