@@ -6,8 +6,7 @@ import Button from "../components/Button";
 import Navbar from "../components/NavBar";
 import useFetch from "../hooks/useFetch";
 import LandingPage from "../pages/LandingPage";
-import SignIn from "../pages/auth/SignIn";
-
+import LoginPage from "../pages/LoginPage";
 
 
 export {
@@ -19,5 +18,5 @@ export {
     Navbar,
     useFetch,
     LandingPage,
-    SignIn
+    LoginPage,
 }

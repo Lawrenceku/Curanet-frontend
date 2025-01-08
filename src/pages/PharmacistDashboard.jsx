@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const PharmacistDashboard = () => {
-    const [selectedSection, setSelectedSection] = useState("prescription");
+    const [selectedSection, setSelectedSection] = useState("prescriptions");
     const [prescriptions, setPrescriptions] = useState([
         {id: 1, patientName: "Raph Gray", medication: "Aspirin", status: "Pending" },
         {id: 2, patientName: "Martha Gray", medication: "Ibuprofen", status: "Pending" },
@@ -52,30 +52,31 @@ const PharmacistDashboard = () => {
     return (
         <div className="h-screen">
             <Header />
-            <main className="flex-1 overflow-auto-hidden"></>
+            <main className="flex-1 overflow-auto-hidden">
+            <div className="h-screen p-8 bg-gray-200">
                 <h1 className="text-3xl font-bold mb-6 text-center">Pharmacy - Dashboard</h1>
                 <div className="grid grid-cols-12 gap-0 h-full">
                     <div className="col-span-3 bg-blue-950 p-4 rounded-lg shadow-md">
                         <div className="flex flex-col items-center space-y-6">
                             <Button
                                 onClick={() => setSelectedSection("prescriptions")}
-                                className="flex flex-col items-center p-3 bg-blue-200 text-white rounded-full hover:bg-blue-700"
+                                className="flex flex-col items-center w-300 p-8 bg-blue-200 text-white rounded-full hover:bg-blue-700"
                             >
-                                <FaPrescriptionBottleAlt size={20} />
+                                <FaPrescriptionBottleAlt size={30} />
                                 <span className="text-xs mt-1">Prescriptions</span>
                             </Button>
                             <Button
                                 onClick={() => setSelectedSection("inventory")}
                                 className="flex flex-col items-center p-3 bg-green-500 text-white rounded-full hover:bg-green-700"
                             >
-                                <FaWarehouse size={20} />
+                                <FaWarehouse size={30} />
                                 <span className="text-xs mt-1">Inventory</span>
                             </Button>
                             <Button
                                 onClick={() => setSelectedSection("interactions")}
-                                className="flex flex-col items-center p-3 bg-yellow-500 text-white rounded-full hover:bg-yellow-700"
+                                className="flex flex-col items-center w-70GGGGGG p-8 bg-yellow-500 text-white rounded-full hover:bg-yellow-700"
                             >
-                                <FaListAlt size={24} />
+                                <FaListAlt size={30} />
                                 <span className="text-xs mt-1">Interactions</span>
                             </Button>
                         </div>
@@ -98,9 +99,6 @@ const PharmacistDashboard = () => {
                                             </div>
                                         </li>
                                     ))}
-
-
-
                                 </ul>
                             </>
                         )}
@@ -136,7 +134,7 @@ const PharmacistDashboard = () => {
                             <>
                                 <h2 className="text-2xl font-semibold mb-4">Drug Interaction Checks</h2>
                                 {interactionWarnings.length > 0 ? (
-                                    <ul className="list-disc list-inside">
+                                    <ul className="list-disc list-inside text-red-100 ">
                                         {interactionWarnings.map((warning, index) => (
                                             <li key={index}>{warning}</li>
                                         ))}
@@ -147,7 +145,6 @@ const PharmacistDashboard = () => {
                             </>
                         )}
                     </div>
-
                     <div className="col-span-3 bg-blue-200 p-3 rounded-lg shadow-md">
                         <h2 className="text-2xl font-semibold mb-4 text-">Notifications</h2>
                         <div>
